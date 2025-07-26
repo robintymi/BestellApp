@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BestellAppMark#4</title>
+    <link rel="shortcut icon" href="./img/meat.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css" />
+    <script>
+      function ReloadLocation() {
+  location.reload();
+}
+    </script>
+  </head>
+  <body id="document-body" onload="renderDishes()">
+    <header>
+      <div style="cursor:pointer; max-width:12000px;" onclick="ReloadLocation()"><b>Bestell App</b></div>
+    </header>
+    <main>
+      <div class="full-menu" style="max-width:1200px;">
+        <h1>Western Style Steakhouse</h1>
+        <div class="description" style="font-size:20px; padding:10px;">
+          Mit Sorgfalt zubereitete Grill- und Fleischspezialitäten vom Lavasteingrill -
+           ein Genuss in herausragender Qualität. Im Western Style Steakhouse vereinen wir 
+           höchste Kochkunst mit meisterhaftem Handwerk, um unseren Gästen erstklassige 
+           Fleischqualität und ein unvergleichliches Geschmackserlebnis zu bieten.
+        </div>
+        <div style="font-size: 30px; color:gold; font-weight: bold; text-align: center;"> 4,4 / 5 ★ </div>
+        <div style="position:relative;">
+          <img class="main-images" src="./img/steakhouse.jpg" alt="">
+          <img class="logo-over-image" src="./img/meat.png" alt="">
+        </div>
+      
+        <div class="navLink">
+          <a href="#starters">Vorspeisen</a>
+          <a href="#main-dishes">Hauptgerichte</a>
+          <a href="#desserts">Nachspeisen</a>
+        </div>
+        <div class="menu" id="starters">
+          <h2>Vorspeisen</h2>
+          <img class="main-images" src="./img/beefcarpaccio.jpg" alt="">
+          <div id="starters"></div>
+        </div>
+        <div class="menu" id="main-dishes">
+          <h2>Hauptgerichte</h2>
+          <img class="main-images" src="./img/steak.jpg" alt="">
+          <div id="main-courses"></div>
+        </div>
+
+        <div class="menu" id="desserts">
+          <h2>Nachspeisen</h2>
+          <img class="main-images" src="./img/dessert.jpg" alt="">
+          <div id="desserts"></div>
+        </div>
+        <button class="open-hidden-cart" onclick="toggleHiddenCart()" id="open-hidden-cart">WARENKORB</button>
+      </div>
+      </div>
+<!-- NORMAL CART -->
+      <div id="warenkorb" class="warenkorb">
+        <div class="sticky-cart">
+          <h2>Warenkorb</h2>
+          <div id="sticky-cart"></div>
+          <p id="current-sum"></p>
+          <p>Lieferkosten: 5€</p>
+          <p id="total-sum"></p>
+          <button class="order-btn" onclick="order()" id="order-btn"disabled>Bestellen</button>
+          <p id="order-note" style="display:none;">Bestellung erfolgreich abgeschickt!</p>
+        </div>
+      </div> 
+
+      <!-- HIDDEN CART -->
+    <div id="click-outside-hidden-cart" onclick="toggleHiddenCart()" class="hidden-cart d_none">
+      <div class="hidden-cart-content" onclick="preventBubbling(event)">
+        <h2>Warenkorb</h2>
+        <div style="display:flex; justify-content: end;">
+        <p onclick="closeHiddenCart()" class="close-button">x</p>
+        </div>
+        <div id="hidden-cart-content" ></div>
+        <p id="hidden-current-sum"></p>
+        <p>Lieferkosten: 5€</p>
+        <p id="hidden-total-sum"></p>
+        <button class="order-btn" onclick="order()" id="hidden-order-btn"disabled>Bestellen</button>
+        <p id="hidden-order-note" style="display:none;">Bestellung erfolgreich abgeschickt!</p>
+      </div>
+    </div>
+    </main>
+
+    <footer>
+     Lieferzeiten: Dienstags - Sonntags: 11:30 Uhr - 23:30 Uhr
+    </footer>
+    <script src="./scripts/templates.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
